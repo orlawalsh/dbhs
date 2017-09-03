@@ -1,7 +1,3 @@
-# Copyright (c) 2015, @sudharti(Sudharsanan Muralidharan)
-# Socify is an Open source Social network written in Ruby on Rails This file is licensed
-# under GNU GPL v2 or later. See the LICENSE.
-
 class Comment < ActiveRecord::Base
   include Shared::Callbacks
   include ActsAsCommentable::Comment
@@ -9,12 +5,7 @@ class Comment < ActiveRecord::Base
 
   belongs_to :commentable, polymorphic: true, counter_cache: true
   default_scope -> { order('created_at DESC') }
-
-  # NOTE: install the acts_as_votable plugin if you
-  # want user to vote on the quality of comments.
-  # acts_as_voteable
-
-  # NOTE: Comments belong to a user
+  
   belongs_to :user
 
   include PublicActivity::Model
