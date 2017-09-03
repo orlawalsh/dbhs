@@ -1,3 +1,4 @@
+require 'carrierwave/storage/fog'
 CarrierWave.configure do |config|
 
     # Use local storage if in development or test
